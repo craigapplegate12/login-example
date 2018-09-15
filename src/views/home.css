@@ -1,0 +1,46 @@
+.home-header{
+    width: 100vw;
+    height: 50px;
+    border: 4px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f752a5ab;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.home-header div {
+    margin: 20px;
+}
+
+.home-header a {
+    margin: 20px;
+}
+
+.home-body {
+    display: flex;
+}
+
+.side-bar {
+    height: 50vw;
+    width: 20vw;
+    border: 4px solid  #ffffff;
+    background: rgba(255, 192, 75, 0.795);
+    background-image: url('../assets/katya.gif');
+    background-size: stretch;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-content{
+    height: 50vw;
+    width: 80vw;
+    background: #ff80ff;
+    border: 4px solid  #ffffff;
+    background-image: url('../assets/trixiehoney.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -1,22 +1,41 @@
 import React, {Component} from 'react';
-import {findById} from '../data/data-service';
+import {findById} from '../data/api';
+import { Link } from 'react-router-dom';
+import './home.css';
+
+function Header(props) {
+  return <div className="home-header">Hello {props.user.firstName}
+    <Link to = '/login'>Back to Login</Link></div>
+}
 
 class Home extends Component {
-  state ={
+  state = {
     user:{}
   }
 
   componentDidMount(){
     const id = this.props.match.params.id;
-    const user = findById(id);
-    this.setState ({user});
+    findById(id)
+      .then((user) => {
+        this.setState({ user })
+      })
+      .catch((error)=>{
+        console.error(error)
+      })
   }
 
   render() {
-   if(!this.state.user.id) return <div>Loading gurl....</div>
+   if(!this.state.user.id) return <div>Loading....</div>
     return (
-      <div> Hello, {this.state.user.firstName}! </div>
-
+      <div>
+       <Header user={this.state.user} history={this.props.history}/>
+       
+        <div className="home-body">
+          <div className="side-bar">  </div> 
+          <div className ="main-content"> </div>
+        </div>
+       </div>
+   
     )
   }
 }
